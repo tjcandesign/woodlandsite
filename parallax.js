@@ -1,26 +1,33 @@
 (function(){
-  var bg = document.querySelector('.section-image-bg');
-  var section = document.querySelector('.section-image');
-  if(!bg || !section) return;
-  // Respect reduced-motion preference
   if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     return;
   }
+  var targets = [];
+  document.querySelectorAll('.hero-bg').forEach(function(el){
+    targets.push({ el: el, container: el.closest('.hero'), factor: 0.25 });
+  });
+  document.querySelectorAll('.section-image-bg').forEach(function(el){
+    targets.push({ el: el, container: el.closest('.section-image'), factor: 0.2 });
+  });
+  if (!targets.length) return;
   var ticking = false;
-  var factor = 0.2;
   function update(){
-    var rect = section.getBoundingClientRect();
     var vh = window.innerHeight || document.documentElement.clientHeight;
-    if (rect.bottom > -200 && rect.top < vh + 200) {
-      var sectionCenter = rect.top + rect.height / 2;
-      var viewportCenter = vh / 2;
-      var offset = (viewportCenter - sectionCenter) * factor;
-      bg.style.setProperty('--parallax-y', offset + 'px');
+    for (var i = 0; i < targets.length; i++) {
+      var t = targets[i];
+      if (!t.container) continue;
+      var rect = t.container.getBoundingClientRect();
+      if (rect.bottom > -200 && rect.top < vh + 200) {
+        var sectionCenter = rect.top + rect.height / 2;
+        var viewportCenter = vh / 2;
+        var offset = (viewportCenter - sectionCenter) * t.factor;
+        t.el.style.setProperty('--parallax-y', offset + 'px');
+      }
     }
     ticking = false;
   }
   function onScroll(){
-    if(!ticking){
+    if (!ticking) {
       window.requestAnimationFrame(update);
       ticking = true;
     }
