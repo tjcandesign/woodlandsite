@@ -341,6 +341,7 @@ img { display: block; max-width: 100%; height: auto; }
 .section-inner.reading { max-width: var(--content-reading); margin: 0; }
 
 .section-alt { background: var(--bg-white); }
+.section-white { background: #FFFFFF; }
 .section-dark { background: var(--bg-dark); color: var(--text-white); }
 .section-warm { background: var(--bg-warm); }
 .section-cream { background: var(--bg-cream); }
