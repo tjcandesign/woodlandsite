@@ -975,7 +975,8 @@ img { display: block; max-width: 100%; height: auto; }
 }
 .footer-col p:last-child { margin-bottom: 0; }
 .footer-brand img {
-  height: 18px;
+  width: 125px;
+  height: auto;
   margin-bottom: 22px;
 }
 .footer-brand p {
