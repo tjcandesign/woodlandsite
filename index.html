@@ -13,7 +13,7 @@
 <body>
   <header class="top-header">
     <a class="top-header-brand" href="index.html">
-      <img src="assets/woodland-stacked-white.svg" alt="Woodland Estate &amp; Title">
+      <img src="../assets/woodland-stacked-white.svg" alt="Woodland Estate &amp; Title">
     </a>
     <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.top-nav').classList.toggle('open')">Menu</button>
     <nav class="top-nav">
@@ -28,9 +28,10 @@
   <section class="hero">
     <div class="hero-bg"></div>
     <div class="hero-overlay"></div>
+    <div class="hero-grid" aria-hidden="true"></div>
     <div class="hero-inner">
       <h1>Personable, transparent,<br>attorney-led property settlements.</h1>
-      <p class="hero-sub">Serving Washington, DC, Virginia, and Maryland. A clearing house for buyers, sellers, lenders, and their agents, specializing in complex problem-solving.</p>
+      <p class="hero-sub">Serving Washington, DC, Virginia, and Maryland, Woodland is a clearing house for buyers, sellers, lenders, and their agents, specializing in complex problem-solving.</p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="https://woodlandtitledc.paymints.io/create-account" target="_blank" rel="noopener">Send Earnest Money</a>
         <a class="btn btn-secondary" href="mailto:woodlandteam@woodlandtitleDC.com">Order Services</a>
@@ -50,6 +51,30 @@
             <p class="pull-quote">Our aim is the highest quality results for property transactions, assuring that clients are informed, comfortable throughout the process, and confident when closing on their purchase.</p>
           </div>
         </aside>
+      </div>
+
+      <div class="process-mini-header">
+        <h3 class="process-mini-title">Process is the product.</h3>
+      </div>
+      <div class="process-mini">
+        <div class="process-mini-step">
+          <div class="process-mini-num">01</div>
+          <h3>Title Search</h3>
+          <p>We review the title history and resolve any defects so ownership is clear before you sign.</p>
+        </div>
+        <div class="process-mini-step">
+          <div class="process-mini-num">02</div>
+          <h3>Title Insurance</h3>
+          <p>Underwritten coverage protects you and your lender against claims after closing.</p>
+        </div>
+        <div class="process-mini-step">
+          <div class="process-mini-num">03</div>
+          <h3>Escrow</h3>
+          <p>We hold funds in trust and disburse them precisely when every condition is met.</p>
+        </div>
+      </div>
+      <div class="process-mini-cta">
+        <a class="btn btn-outline btn-dark" href="closing-process.html">See the full closing process</a>
       </div>
     </div>
   </section>
@@ -75,11 +100,11 @@
           <p>We underwrite for two of the leading title insurance guarantors: <strong>Fidelity National Title Insurance Company</strong> and <strong>Stewart Title Guaranty Company</strong>. Our clients are covered by underwriters with the depth and stability the work demands.</p>
         </div>
         <aside class="split-aside underwriter-seals">
-          <img src="assets/Fidelity National Title Insurance Company.png" alt="Fidelity National Title Insurance Company">
+          <img src="../assets/Fidelity National Title Insurance Company.png" alt="Fidelity National Title Insurance Company">
           <span class="seal-check" aria-hidden="true">
             <svg viewBox="0 0 24 24" width="44" height="44" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12.5 11 15.5 16.5 9.5"></polyline></svg>
           </span>
-          <img src="assets/stewart-seal.jpg" alt="Stewart Title Guaranty Company">
+          <img src="../assets/stewart-seal.jpg" alt="Stewart Title Guaranty Company">
         </aside>
       </div>
     </div>
@@ -98,8 +123,8 @@
     <div class="footer-inner">
       <div class="footer-col footer-brand">
         <div class="footer-logo-spin" aria-label="Woodland Estate &amp; Title">
-          <img class="footer-logo-ring" src="assets/circle-ring-white.svg" alt="" aria-hidden="true">
-          <img class="footer-logo-w" src="assets/circle-w-white.svg" alt="Woodland Estate &amp; Title">
+          <img class="footer-logo-ring" src="../assets/circle-ring-white.svg" alt="" aria-hidden="true">
+          <img class="footer-logo-w" src="../assets/circle-w-white.svg" alt="Woodland Estate &amp; Title">
         </div>
         <p>Attorney-led property settlements, steady and thorough. The way closings ought to feel.</p>
       </div>
@@ -130,5 +155,7 @@
   </footer>
 
   <script src="footer-spin.js" defer></script>
+  <script src="parallax.js" defer></script>
+  <script src="hero-grid.js" defer></script>
 </body>
 </html>
