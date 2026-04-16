@@ -925,7 +925,16 @@ img { display: block; max-width: 100%; height: auto; }
   content: '';
   position: absolute;
   inset: 0;
+  background: url('../assets/map from current website.jpg') center center / cover no-repeat;
+  filter: saturate(0.85);
+  z-index: -2;
+}
+.cta-band::after {
+  content: '';
+  position: absolute;
+  inset: 0;
   background:
+    linear-gradient(180deg, rgba(15, 34, 64, 0.78) 0%, rgba(7, 22, 46, 0.9) 100%),
     radial-gradient(circle at 20% 50%, rgba(184,134,11,0.12), transparent 40%),
     radial-gradient(circle at 80% 50%, rgba(92,64,51,0.15), transparent 45%);
   z-index: -1;
