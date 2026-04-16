@@ -30,7 +30,9 @@
       --serif: 'EB Garamond', Georgia, serif;
       --sans: 'Inter', -apple-system, sans-serif;
       --nav-width: 260px;
-      --content-max: 820px;
+      --content-max: 1300px;
+      --content-narrow: 780px;
+      --gutter: max(clamp(24px, 4vw, 56px), calc((100vw - var(--content-max)) / 2));
     }
 
     html { scroll-behavior: smooth; }
@@ -45,14 +47,15 @@
     /* ─── TOP HEADER ─── */
     .top-header {
       background: var(--bg-dark);
-      padding: 20px 60px;
+      padding: 20px var(--gutter);
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
     .top-header img {
-      height: 14px;
+      height: 44px;
       width: auto;
+      display: block;
     }
     .top-header-tag {
       font-size: 11px;
@@ -66,7 +69,7 @@
     .hero {
       position: relative;
       color: var(--text-white);
-      padding: 140px 60px 120px;
+      padding: 140px var(--gutter) 120px;
       overflow: hidden;
       min-height: 480px;
       display: flex;
@@ -173,10 +176,10 @@
 
     /* ─── SECTIONS ─── */
     .section {
-      padding: 80px 60px;
+      padding: 80px var(--gutter);
     }
     .section-inner {
-      max-width: var(--content-max);
+      max-width: var(--content-narrow);
       margin: 0 auto;
     }
     .section-alt {
@@ -717,7 +720,7 @@
 
   <!-- ─── TOP HEADER ─── -->
   <div class="top-header">
-    <img src="assets/woodland-logo-full.svg" alt="Woodland Estate & Title">
+    <img src="assets/woodland-stacked-white.svg" alt="Woodland Estate & Title">
     <div style="display: flex; align-items: center; gap: 20px;">
       <span class="top-header-tag">Brand Guidelines</span>
       <a href="https://woodlandtitleproposal.netlify.app/" target="_blank" style="font-size: 12px; font-weight: 500; color: var(--text-white); background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); padding: 6px 16px; border-radius: 4px; text-decoration: none; transition: background 0.2s;">Project Proposal</a>
