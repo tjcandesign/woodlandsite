@@ -838,12 +838,14 @@ img { display: block; max-width: 100%; height: auto; }
   max-width: 720px;
 }
 .cta-band p {
-  font-family: var(--serif);
-  font-size: 20px;
-  font-style: italic;
-  color: rgba(255,255,255,0.78);
-  max-width: 600px;
+  font-family: var(--sans);
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 300;
+  color: rgba(255,255,255,0.82);
+  max-width: 640px;
   margin: 0 auto 36px;
+  line-height: 1.55;
   line-height: 1.6;
 }
 .cta-band .cta-actions {
