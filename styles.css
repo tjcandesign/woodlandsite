@@ -345,6 +345,49 @@ img { display: block; max-width: 100%; height: auto; }
 .section-warm { background: var(--bg-warm); }
 .section-cream { background: var(--bg-cream); }
 
+.section-image {
+  position: relative;
+  color: var(--text-white);
+  padding: 180px var(--gutter);
+  min-height: 75vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  isolation: isolate;
+}
+.section-image-bg {
+  position: absolute;
+  inset: 0;
+  background: url('assets/Plate-23_ca000072-2048x1465.jpg') center center / cover no-repeat;
+  z-index: 0;
+  filter: saturate(0.9);
+}
+.section-image-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(15, 20, 40, 0.55) 0%, rgba(15, 20, 40, 0.78) 100%),
+    linear-gradient(90deg, rgba(15, 20, 40, 0.5) 0%, rgba(15, 20, 40, 0.2) 70%);
+  z-index: 1;
+}
+.section-image .section-inner { position: relative; z-index: 2; }
+.section.section-image .section-tag { color: var(--gold-soft); }
+.section.section-image h2 {
+  color: #FCFAF6;
+  font-style: italic;
+}
+.section.section-image h3 { color: #FCFAF6; }
+.section.section-image p { color: rgba(255,255,255,0.86); }
+.section.section-image .btn-outline {
+  color: #FCFAF6;
+  border-color: rgba(255,255,255,0.6);
+}
+.section.section-image .btn-outline:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--navy-dark);
+}
+
 .section-tag {
   font-family: var(--sans);
   font-size: 10.5px;
