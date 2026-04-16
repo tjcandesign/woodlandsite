@@ -194,7 +194,7 @@ img { display: block; max-width: 100%; height: auto; }
 .hero-bg {
   position: absolute;
   inset: 0;
-  background: url('../assets/eastern-market.jpeg') center 35% / cover no-repeat;
+  background: url('assets/eastern-market.jpeg') center 35% / cover no-repeat;
   z-index: 0;
   filter: saturate(0.85);
 }
@@ -358,7 +358,7 @@ img { display: block; max-width: 100%; height: auto; }
 .section-image-bg {
   position: absolute;
   inset: 0;
-  background: url('assets/Plate-23_ca000072-2048x1465.jpg') center center / cover no-repeat;
+  background: url('assets/Map section 873 .png') center center / cover no-repeat;
   z-index: 0;
   filter: saturate(0.9);
 }
