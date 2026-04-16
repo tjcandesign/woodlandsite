@@ -935,10 +935,7 @@ img { display: block; max-width: 100%; height: auto; }
   content: '';
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(180deg, rgba(7, 22, 46, 0.92) 0%, rgba(5, 15, 32, 0.97) 100%),
-    radial-gradient(circle at 20% 50%, rgba(184,134,11,0.12), transparent 40%),
-    radial-gradient(circle at 80% 50%, rgba(92,64,51,0.15), transparent 45%);
+  background: rgba(7, 22, 46, 0.92);
   z-index: -1;
 }
 .cta-band .section-tag {
