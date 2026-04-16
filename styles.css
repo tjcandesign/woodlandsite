@@ -361,9 +361,7 @@ img { display: block; max-width: 100%; height: auto; }
 .section.section-feature .pull-quote { font-size: clamp(22px, 2vw, 28px); }
 
 .process-mini-header {
-  margin-top: 96px;
-  padding-top: 56px;
-  border-top: 1px solid var(--border);
+  margin-top: 160px;
 }
 .process-mini-title {
   font-family: var(--serif);
@@ -377,38 +375,71 @@ img { display: block; max-width: 100%; height: auto; }
 }
 .process-mini {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 48px;
-  margin-top: 40px;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  align-items: stretch;
+  gap: 0;
+  margin-top: 56px;
 }
-.process-mini-step {
+.process-mini-card {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding-top: 24px;
-  border-top: 2px solid var(--sage-dark);
+  gap: 14px;
+  background: #FFFFFF;
+  border-radius: 16px;
+  padding: 32px 30px;
+  box-shadow: 0 1px 2px rgba(15, 34, 64, 0.04), 0 24px 48px rgba(15, 34, 64, 0.06);
+}
+.process-mini-meta {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin-bottom: 2px;
 }
 .process-mini-num {
   font-family: var(--serif);
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 500;
   color: var(--gold);
   letter-spacing: 1px;
 }
-.process-mini-step h3 {
+.process-mini-label {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-soft);
+}
+.section .process-mini-card h3 {
   font-family: var(--serif);
+  font-style: normal;
   font-weight: 500;
   font-size: 26px;
   line-height: 1.2;
   color: var(--text-dark);
   margin: 0;
+  letter-spacing: -0.3px;
 }
-.process-mini-step p {
+.process-mini-card p {
   font-family: var(--sans);
   font-size: 16px;
   line-height: 1.6;
   color: var(--text-soft);
   margin: 0;
+}
+.process-mini-arrow {
+  align-self: center;
+  padding: 0 18px;
+  color: var(--border-strong);
+  transition: color 380ms var(--ease, ease);
+}
+.process-mini-arrow.is-active {
+  color: var(--gold);
+}
+.process-mini-arrow svg {
+  display: block;
+  width: 56px;
+  height: 20px;
 }
 .process-mini-cta {
   margin-top: 48px;
@@ -422,6 +453,7 @@ img { display: block; max-width: 100%; height: auto; }
   color: #FFFFFF;
   border-color: var(--sage-dark);
 }
+.btn.btn-rounded { border-radius: 16px; }
 
 .split-aside.underwriter-seals {
   padding-top: 0;
@@ -1197,8 +1229,9 @@ img { display: block; max-width: 100%; height: auto; }
   .split-aside { padding-top: 0; }
   .statement { padding-block: 80px; }
 
-  .process-mini { grid-template-columns: 1fr; gap: 36px; }
-  .process-mini-header { margin-top: 64px; padding-top: 40px; }
+  .process-mini { grid-template-columns: 1fr; gap: 20px; }
+  .process-mini-arrow { padding: 8px 0; transform: rotate(90deg); justify-self: center; }
+  .process-mini-header { margin-top: 96px; }
 }
 
 @media (max-width: 640px) {
