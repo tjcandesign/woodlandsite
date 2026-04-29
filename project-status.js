@@ -11,7 +11,15 @@
   var $diaH = document.getElementById('calc-diagram-h');
   var $diaSqin = document.getElementById('calc-diagram-sqin');
   var $diaEach = document.getElementById('calc-diagram-each');
+  var $sumHallSpec = document.getElementById('calc-sum-hall-spec');
+  var $sumHall = document.getElementById('calc-sum-hall');
+  var $sumTop40 = document.getElementById('calc-sum-top40');
+  var $sumTotal = document.getElementById('calc-sum-total');
   var $printBtn = document.querySelector('.calc-print');
+
+  // Top 40 piece — fixed dimensions
+  var TOP40_W = 15;
+  var TOP40_H = 20;
 
   var dollar = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' });
   var num = new Intl.NumberFormat('en-US', { maximumFractionDigits: 1 });
@@ -27,19 +35,27 @@
     var p = n($p, 0);
     var sqin = w * h;
     var each = sqin * p;
-    var total = each * 2;
+    var hallTotal = each * 2;
+    var top40 = TOP40_W * TOP40_H * p;
+    var grand = hallTotal + top40;
 
     var sqinTxt = num.format(sqin);
     var eachTxt = dollar.format(each);
-    var totalTxt = dollar.format(total);
+    var hallTxt = dollar.format(hallTotal);
+    var top40Txt = dollar.format(top40);
+    var grandTxt = dollar.format(grand);
 
     if ($sqin) $sqin.textContent = sqinTxt;
     if ($each) $each.textContent = eachTxt;
-    if ($total) $total.textContent = totalTxt;
+    if ($total) $total.textContent = hallTxt;
     if ($diaW) $diaW.textContent = num.format(w);
     if ($diaH) $diaH.textContent = num.format(h);
     if ($diaSqin) $diaSqin.textContent = sqinTxt;
     if ($diaEach) $diaEach.textContent = eachTxt;
+    if ($sumHallSpec) $sumHallSpec.textContent = num.format(w) + ' × ' + num.format(h);
+    if ($sumHall) $sumHall.textContent = hallTxt;
+    if ($sumTop40) $sumTop40.textContent = top40Txt;
+    if ($sumTotal) $sumTotal.textContent = grandTxt;
   }
 
   ['input', 'change'].forEach(function(evt){
