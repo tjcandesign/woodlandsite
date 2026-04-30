@@ -455,6 +455,25 @@ img { display: block; max-width: 100%; height: auto; }
 }
 .btn.btn-rounded { border-radius: 16px; }
 
+/* Pending / not-yet-linked button — used while the underlying file is queued */
+.btn.btn-disabled {
+  color: var(--text-light);
+  background: transparent;
+  border: 1px dashed var(--border-strong);
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 1;
+}
+.btn.btn-disabled::after {
+  display: none;
+}
+.btn.btn-disabled:hover {
+  background: transparent;
+  color: var(--text-light);
+  border-color: var(--border-strong);
+  transform: none;
+}
+
 .split-aside.underwriter-seals {
   padding-top: 0;
   margin-bottom: 40px;
