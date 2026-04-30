@@ -498,26 +498,27 @@ img { display: block; max-width: 100%; height: auto; }
   color: var(--gold);
 }
 
-/* Mini calendar */
+/* Mini calendar — small icon-sized */
 .comms-mini-cal {
   background: var(--bg-cream, #FCF8EF);
   border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 14px 16px 16px;
+  border-radius: 8px;
+  padding: 8px 10px 10px;
+  max-width: 120px;
 }
 .comms-mini-cal-head {
   font-family: var(--sans);
-  font-size: 11px;
+  font-size: 9px;
   font-weight: 600;
-  letter-spacing: 1.6px;
+  letter-spacing: 1.2px;
   text-transform: uppercase;
   color: var(--text-soft);
-  margin-bottom: 12px;
+  margin-bottom: 7px;
 }
 .comms-mini-cal-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 6px;
+  gap: 3px;
 }
 .comms-mini-cal-grid > span {
   width: 100%;
