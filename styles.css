@@ -1641,6 +1641,86 @@ a.work-card:hover {
   grid-template-columns: 1fr 1fr;
   margin-bottom: 56px;
 }
+.work-grid-pair-23 {
+  grid-template-columns: 2fr 1fr;
+}
+
+/* Wide card with embedded site preview on the left */
+.work-card-with-preview {
+  display: grid;
+  grid-template-columns: minmax(280px, 1fr) 1fr;
+  gap: 32px;
+  align-items: stretch;
+  padding: 24px;
+}
+.work-card-with-preview-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 12px 12px 12px 0;
+}
+
+/* Browser-frame mockup with scaled iframe inside */
+.site-preview {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border-strong);
+  box-shadow: 0 1px 2px rgba(15, 34, 64, 0.06), 0 12px 28px rgba(15, 34, 64, 0.08);
+  background: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  min-height: 280px;
+  align-self: stretch;
+}
+.site-preview-chrome {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 14px;
+  background: linear-gradient(180deg, #F4EFE3 0%, #ECE5D2 100%);
+  border-bottom: 1px solid var(--border);
+}
+.site-preview-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--border-strong);
+  display: inline-block;
+}
+.site-preview-dot:nth-child(1) { background: #E08079; }
+.site-preview-dot:nth-child(2) { background: #E5C26A; }
+.site-preview-dot:nth-child(3) { background: #8FB57A; }
+.site-preview-url {
+  flex: 1;
+  margin-left: 10px;
+  padding: 4px 10px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 6px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+  color: var(--text-soft);
+  letter-spacing: 0.2px;
+  text-align: center;
+}
+.site-preview-viewport {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+  background: #FFFCF6;
+}
+.site-preview-viewport iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1440px;
+  height: 900px;
+  border: 0;
+  pointer-events: none;
+  transform: scale(0.32);
+  transform-origin: top left;
+}
+
+/* The card already handles hover transform; the iframe stays static. */
 .work-card-large {
   padding: 36px 34px 38px;
   gap: 14px;
@@ -2033,7 +2113,10 @@ h2.work-subsection-title {
 
 @media (max-width: 960px) {
   .work-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .work-grid-pair { grid-template-columns: 1fr; }
+  .work-grid-pair,
+  .work-grid-pair-23 { grid-template-columns: 1fr; }
+  .work-card-with-preview { grid-template-columns: 1fr; gap: 20px; }
+  .site-preview { min-height: 240px; }
   .install-row { grid-template-columns: 1fr; gap: 20px; }
   .install-row-media { min-height: 220px; }
   .install-tools { grid-template-columns: 1fr; gap: 24px; }
