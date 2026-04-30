@@ -1648,10 +1648,10 @@ a.work-card:hover {
 /* Wide card with embedded site preview on the left */
 .work-card-with-preview {
   display: grid;
-  grid-template-columns: minmax(280px, 1fr) 1fr;
-  gap: 32px;
+  grid-template-columns: minmax(240px, 0.85fr) 1fr;
+  gap: 56px;
   align-items: stretch;
-  padding: 24px;
+  padding: 28px;
 }
 .work-card-with-preview-body {
   display: flex;
@@ -1669,8 +1669,9 @@ a.work-card:hover {
   background: #FFFFFF;
   display: flex;
   flex-direction: column;
-  min-height: 280px;
-  align-self: stretch;
+  min-height: 240px;
+  align-self: center;
+  width: 100%;
 }
 .site-preview-chrome {
   display: flex;
@@ -1716,7 +1717,7 @@ a.work-card:hover {
   height: 900px;
   border: 0;
   pointer-events: none;
-  transform: scale(0.32);
+  transform: scale(0.26);
   transform-origin: top left;
 }
 
@@ -1724,6 +1725,10 @@ a.work-card:hover {
 .work-card-large {
   padding: 36px 34px 38px;
   gap: 14px;
+  border: 1px solid var(--border);
+}
+.work-card-large.work-card-with-preview {
+  padding: 28px;
 }
 .report-page .section .work-card-large h3 {
   font-size: clamp(28px, 2.4vw, 34px);
