@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Woodland Estate & Title — Listing Refresh & Credibility Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0f1117;
+    --surface: #1a1d27;
+    --surface-hover: #22252f;
+    --border: #2a2d3a;
+    --text: #e4e4e7;
+    --text-muted: #8b8d98;
+    --accent: #6366f1;
+    --accent-light: #818cf8;
+    --green: #22c55e;
+    --green-bg: rgba(34,197,94,0.1);
+    --yellow: #eab308;
+    --yellow-bg: rgba(234,179,8,0.1);
+    --red: #ef4444;
+    --red-bg: rgba(239,68,68,0.1);
+    --orange: #f97316;
+    --orange-bg: rgba(249,115,22,0.1);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hero {
+    padding: 80px 40px 60px;
+    text-align: center;
+    background: linear-gradient(135deg, #1a1d27 0%, #1e1b4b 50%, #1a1d27 100%);
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 50%, rgba(99,102,241,0.08) 0%, transparent 50%);
+    animation: drift 20s ease-in-out infinite alternate;
+  }
+
+  @keyframes drift {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(5%, 3%); }
+  }
+
+  .hero > * { position: relative; z-index: 1; }
+
+  .hero-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    background: rgba(99,102,241,0.15);
+    border: 1px solid rgba(99,102,241,0.3);
+    border-radius: 100px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--accent-light);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 16px;
+    background: linear-gradient(135deg, #fff 0%, #c7d2fe 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hero p {
+    max-width: 640px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    color: var(--text-muted);
+  }
+
+  .hero-meta {
+    margin-top: 28px;
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+
+  .hero-meta span { display: flex; align-items: center; gap: 6px; }
+
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* Table of Contents */
+  .toc {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 32px;
+    margin: 48px auto;
+    max-width: 960px;
+  }
+
+  .toc h2 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+  }
+
+  .toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 8px;
+  }
+
+  .toc a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    color: var(--text);
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    transition: background 0.15s;
+  }
+
+  .toc a:hover { background: var(--surface-hover); }
+
+  .toc a .toc-num {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--accent-light);
+    width: 24px;
+    flex-shrink: 0;
+  }
+
+  /* Sections */
+  section {
+    padding: 64px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  section:last-of-type { border-bottom: none; }
+
+  .section-label {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent-light);
+    margin-bottom: 8px;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    line-height: 1.25;
+  }
+
+  .section-desc {
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin-bottom: 32px;
+    max-width: 640px;
+  }
+
+  h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 32px 0 12px;
+    color: #fff;
+  }
+
+  p { margin-bottom: 16px; }
+
+  /* Cards */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    margin: 24px 0;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+
+  .card:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+  }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+
+  .card-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+
+  .card-title {
+    font-weight: 600;
+    font-size: 1rem;
+  }
+
+  .card p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0; }
+
+  /* Competitor Table */
+  .comp-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 24px 0;
+    font-size: 0.9rem;
+  }
+
+  .comp-table thead { background: rgba(99,102,241,0.08); }
+
+  .comp-table th {
+    text-align: left;
+    padding: 14px 16px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .comp-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+
+  .comp-table tr:last-child td { border-bottom: none; }
+
+  .comp-table .highlight-row { background: rgba(99,102,241,0.06); }
+  .comp-table .highlight-row td:first-child { font-weight: 600; color: var(--accent-light); }
+
+  .rating { color: var(--yellow); font-weight: 600; }
+
+  .badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+
+  .badge-green { background: var(--green-bg); color: var(--green); }
+  .badge-yellow { background: var(--yellow-bg); color: var(--yellow); }
+  .badge-red { background: var(--red-bg); color: var(--red); }
+  .badge-orange { background: var(--orange-bg); color: var(--orange); }
+
+  /* Checklist */
+  .checklist {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    margin: 24px 0;
+  }
+
+  .checklist-title {
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    font-size: 0.92rem;
+  }
+
+  .check-item:last-child { border-bottom: none; }
+
+  .check-box {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--border);
+    border-radius: 4px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s;
+  }
+
+  .check-box.checked {
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+
+  .check-box.checked::after {
+    content: '✓';
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 700;
+  }
+
+  .check-label { flex: 1; }
+  .check-label strong { color: #fff; }
+
+  .check-priority {
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 4px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .p-high { background: var(--red-bg); color: var(--red); }
+  .p-med { background: var(--yellow-bg); color: var(--yellow); }
+  .p-low { background: var(--green-bg); color: var(--green); }
+
+  /* Callout */
+  .callout {
+    border-left: 3px solid var(--accent);
+    background: rgba(99,102,241,0.06);
+    padding: 20px 24px;
+    border-radius: 0 8px 8px 0;
+    margin: 24px 0;
+    font-size: 0.92rem;
+  }
+
+  .callout-warn {
+    border-left-color: var(--yellow);
+    background: rgba(234,179,8,0.06);
+  }
+
+  .callout-success {
+    border-left-color: var(--green);
+    background: rgba(34,197,94,0.06);
+  }
+
+  .callout strong { color: #fff; }
+
+  /* Stat Blocks */
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+    margin: 24px 0;
+  }
+
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .stat-value {
+    font-size: 2rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--accent-light), var(--green));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+  }
+
+  /* Links */
+  a { color: var(--accent-light); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* Example embed frames */
+  .example-frame {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 24px 0;
+  }
+
+  .example-frame-header {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  .dot { width: 10px; height: 10px; border-radius: 50%; }
+  .dot-r { background: #ef4444; }
+  .dot-y { background: #eab308; }
+  .dot-g { background: #22c55e; }
+
+  .example-frame-body {
+    padding: 24px;
+  }
+
+  .example-frame-body img {
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  /* Progress Tracker */
+  .progress-bar-wrap {
+    background: var(--border);
+    border-radius: 100px;
+    height: 8px;
+    margin: 12px 0;
+    overflow: hidden;
+  }
+
+  .progress-bar-fill {
+    height: 100%;
+    border-radius: 100px;
+    background: linear-gradient(90deg, var(--accent), var(--green));
+    transition: width 0.5s ease;
+  }
+
+  /* Tabs */
+  .tabs {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0;
+  }
+
+  .tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    border-bottom: 2px solid transparent;
+    transition: all 0.15s;
+    margin-bottom: -1px;
+  }
+
+  .tab:hover { color: var(--text); }
+  .tab.active { color: var(--accent-light); border-bottom-color: var(--accent); }
+
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+
+  /* Footer */
+  footer {
+    padding: 48px 24px;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border);
+  }
+
+  footer a { color: var(--accent-light); }
+
+  /* Responsive */
+  @media (max-width: 640px) {
+    .hero { padding: 48px 20px 40px; }
+    section { padding: 40px 0; }
+    .toc { padding: 20px; margin: 32px 16px; }
+    .toc-grid { grid-template-columns: 1fr; }
+    .comp-table { font-size: 0.8rem; }
+    .comp-table th, .comp-table td { padding: 10px 8px; }
+    .stat-row { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">WRKHRS &times; Woodland Title</div>
+  <h1>Google & Yelp Listing Refresh<br>+ Credibility Playbook</h1>
+  <p>A tactical guide for elevating Woodland Estate & Title's online presence across Google, Yelp, and key directories — benchmarked against top Capitol Hill competitors.</p>
+  <div class="hero-meta">
+    <span>&#128205; 659 C St SE, Washington DC 20003</span>
+    <span>&#128197; Prepared April 2026</span>
+    <span>&#127919; Local Pack dominance</span>
+  </div>
+</div>
+
+<!-- TABLE OF CONTENTS -->
+<div class="toc container">
+  <h2>What's inside</h2>
+  <div class="toc-grid">
+    <a href="#audit"><span class="toc-num">01</span> Current State Audit</a>
+    <a href="#competitors"><span class="toc-num">02</span> Competitor Benchmark</a>
+    <a href="#google"><span class="toc-num">03</span> Google Business Profile</a>
+    <a href="#yelp"><span class="toc-num">04</span> Yelp Optimization</a>
+    <a href="#directories"><span class="toc-num">05</span> Bonus Directories</a>
+    <a href="#design"><span class="toc-num">06</span> Design Quick Wins</a>
+    <a href="#timeline"><span class="toc-num">07</span> Rollout Timeline</a>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- ============================================================ -->
+<!-- SECTION 1: CURRENT STATE AUDIT -->
+<!-- ============================================================ -->
+<section id="audit">
+  <span class="section-label">Section 01</span>
+  <h2>Current State Audit</h2>
+  <p class="section-desc">Where Woodland Estate & Title stands today across platforms, and the gaps to close.</p>
+
+  <div class="stat-row">
+    <div class="stat">
+      <div class="stat-value">5.0</div>
+      <div class="stat-label">Google / Birdeye Rating</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">261</div>
+      <div class="stat-label">Total Reviews (Birdeye)</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">~5</div>
+      <div class="stat-label">Yelp Reviews (est.)</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">0</div>
+      <div class="stat-label">Meta Description (empty!)</div>
+    </div>
+  </div>
+
+  <h3>What's Working</h3>
+  <div class="callout callout-success">
+    <strong>Perfect 5-star rating</strong> with 261+ reviews is an exceptional foundation. Reviewers consistently praise responsiveness ("measured in minutes"), personal service, and the attorney-led model. The <a href="https://www.woodlandtitledc.com/" target="_blank">website</a> uses clean, modern Squarespace design with Inter typeface. The "Schedule Online" CTA via Paymints integration is smart.
+  </div>
+
+  <h3>Critical Gaps</h3>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon" style="background:var(--red-bg); color:var(--red);">!</div>
+        <span class="card-title">Empty Meta Description</span>
+      </div>
+      <p>The homepage &lt;meta description&gt; is blank. Google is auto-generating a snippet, which likely doesn't reflect the attorney-led positioning. This is the single biggest SEO quick win.</p>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon" style="background:var(--red-bg); color:var(--red);">!</div>
+        <span class="card-title">No Team Bios on Site</span>
+      </div>
+      <p>The website doesn't feature any team member names, photos, or bios. Competitors like KVS Title prominently showcase their attorneys. This undermines the "attorney-led" differentiator.</p>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon" style="background:var(--orange-bg); color:var(--orange);">~</div>
+        <span class="card-title">Yelp Underutilized</span>
+      </div>
+      <p>The <a href="https://www.yelp.com/biz/woodland-estate-and-title-washington" target="_blank">Yelp listing</a> exists but has very few reviews relative to the 261 on Google. This is a missed channel — Yelp ranks extremely well for DC service queries.</p>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon" style="background:var(--orange-bg); color:var(--orange);">~</div>
+        <span class="card-title">No Homepage Testimonials</span>
+      </div>
+      <p>Despite 261 five-star reviews, zero testimonials appear on the homepage. Social proof is the #1 trust signal for title companies where clients are choosing who handles their largest transaction.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SECTION 2: COMPETITOR BENCHMARK -->
+<!-- ============================================================ -->
+<section id="competitors">
+  <span class="section-label">Section 02</span>
+  <h2>Capitol Hill Competitor Benchmark</h2>
+  <p class="section-desc">How the top title companies in the DC Hill area present themselves online — and where Woodland can win.</p>
+
+  <table class="comp-table">
+    <thead>
+      <tr>
+        <th>Company</th>
+        <th>Google Rating</th>
+        <th>Review Count</th>
+        <th>Yelp Presence</th>
+        <th>Key Strength</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="highlight-row">
+        <td>Woodland Estate & Title</td>
+        <td><span class="rating">5.0 ★</span></td>
+        <td>261+</td>
+        <td><span class="badge badge-yellow">Minimal</span></td>
+        <td>Perfect rating, attorney-led, Capitol Hill HQ</td>
+      </tr>
+      <tr>
+        <td><a href="https://www.kvstitle.com/" target="_blank">KVS Title</a></td>
+        <td><span class="rating">4.8 ★</span></td>
+        <td>93 (Yelp)</td>
+        <td><span class="badge badge-green">Strong</span></td>
+        <td>700 Penn building, low caseload model, 14+ yr avg attorney experience</td>
+      </tr>
+      <tr>
+        <td><a href="https://www.federaltitle.com/" target="_blank">Federal Title & Escrow</a></td>
+        <td><span class="rating">4.9 ★</span></td>
+        <td>159</td>
+        <td><span class="badge badge-green">Strong</span></td>
+        <td>Since 1996, multi-location, digital closing platform, strong Yelp (20 reviews + photos)</td>
+      </tr>
+      <tr>
+        <td><a href="https://easterntitle.com/" target="_blank">Eastern Title</a></td>
+        <td><span class="rating">4.5 ★</span></td>
+        <td>~30</td>
+        <td><span class="badge badge-yellow">Moderate</span></td>
+        <td>Capitol Hill specialist, RON options, solutions-oriented reputation</td>
+      </tr>
+      <tr>
+        <td><a href="https://capitoltitle.com/" target="_blank">Capitol Title Group</a></td>
+        <td><span class="rating">4.7 ★</span></td>
+        <td>51</td>
+        <td><span class="badge badge-red">Weak</span></td>
+        <td>Since 1973, attorney-owned, strong MD presence</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <strong>Key Takeaway:</strong> Woodland already owns the best rating and highest review count in the competitive set. The gap is <em>presentation depth</em> — competitors like KVS and Federal Title invest in richer profiles (team photos, office tours, FAQ content, Yelp activity) that build familiarity before a prospect ever visits the website. Closing this gap would make Woodland the clear standout.
+  </div>
+
+  <!-- Specific competitor moves we plan to copy are maintained in the
+       internal working copy of this guide and omitted from the shared
+       version intentionally. -->
+</section>
+
+<!-- ============================================================ -->
+<!-- SECTION 3: GOOGLE BUSINESS PROFILE -->
+<!-- ============================================================ -->
+<section id="google">
+  <span class="section-label">Section 03</span>
+  <h2>Google Business Profile Refresh</h2>
+  <p class="section-desc">The GBP is the most important listing to optimize. In 2026, Google cross-references your profile with 50+ directories and your own website content.</p>
+
+  <!-- Tabs -->
+  <div class="tabs" id="google-tabs">
+    <div class="tab active" data-tab="g-profile">Profile Basics</div>
+    <div class="tab" data-tab="g-content">Content Strategy</div>
+    <div class="tab" data-tab="g-reviews">Review Engine</div>
+    <div class="tab" data-tab="g-advanced">Advanced Tactics</div>
+  </div>
+
+  <!-- Tab: Profile Basics -->
+  <div class="tab-content active" id="g-profile">
+    <div class="checklist">
+      <div class="checklist-title">&#9745; Profile Completion Checklist</div>
+      <div class="check-item">
+        <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+        <div class="check-label"><strong>Verify business name</strong> matches exactly across all platforms: "Woodland Estate & Title" (not "Woodland Title DC" or other variants)</div>
+        <span class="check-priority p-high">HIGH</span>
+      </div>
+      <div class="check-item">
+        <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+        <div class="check-label"><strong>Primary category:</strong> "Title Company" — confirm this is set, not "Real Estate Agent" or generic category</div>
+        <span class="check-priority p-high">HIGH</span>
+      </div>
+      <div class="check-item">
+        <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+        <div class="check-label"><strong>Secondary categories:</strong> Add "Real Estate Attorney," "Escrow Service," "Settlement Office" if applicable</div>
+        <span class="check-priority p-med">MED</span>
+      </div>
+      <div class="check-item">
+        <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+        <div class="check-label"><strong>NAP+W consistency:</strong> Ensure name, address (659 C St SE, Washington, DC 20003), phone (202-516-6855), and website URL match everywhere</div>
+        <span class="check-priority p-high">HIGH</span>
+      </div>
+      <div class="check-item">
+        <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+        <div class="check-label"><strong>Business description:</strong> Write a keyword-rich 750-character description highlighting attorney-led closings, DC/VA/MD coverage, Fidelity and Stewart underwriting</div>
+        <span class="check-priority p-high">HIGH</span>
+      </div>
+      <div class="check-item">
+        <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+        <div class="check-label"><strong>Services tab:</strong> Add all services with descriptions — Purchase settlements, Refinances, Title insurance, Title search, Short sales, REO/Bank-owned, Commercial closings</div>
+        <span class="check-priority p-high">HIGH</span>
+      </div>
+      <div class="check-item">
+        <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+        <div class="check-label"><strong>Attributes:</strong> Enable all that apply — "Veteran-led," "Women-led," "By appointment only," "Online estimates," etc.</div>
+        <span class="check-priority p-low">LOW</span>
+      </div>
+      <div class="check-item">
+        <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+        <div class="check-label"><strong>Booking link:</strong> Point to the Paymints scheduling URL (woodlandtitledc.paymints.io) so prospects can book directly from Google</div>
+        <span class="check-priority p-med">MED</span>
+      </div>
+      <div class="check-item">
+        <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+        <div class="check-label"><strong>Messaging:</strong> Enable GBP messaging with a saved quick-reply template. Google now factors response time into ranking.</div>
+        <span class="check-priority p-med">MED</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab: Content Strategy -->
+  <div class="tab-content" id="g-content">
+    <h3>Photo Strategy</h3>
+    <div class="callout">
+      <strong>Stat:</strong> Businesses with high-quality photos receive <strong>42% more direction requests</strong> and <strong>35% more click-throughs</strong> than those without. Google's 2026 algorithm also penalizes profiles that haven't added a new photo in 30+ days. <br><small>Source: <a href="https://www.kellyheckphotography.com/the-ultimate-guide-to-optimizing-google-business-profiles-with-photography/" target="_blank">Kelly Heck Photography / GBP Photography Guide</a></small>
+    </div>
+
+    <p>Woodland should invest in a single professional photo session that produces assets for <em>all</em> platforms simultaneously. Here's what to shoot:</p>
+
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon" style="background:rgba(34,197,94,0.15); color:var(--green);">&#128247;</div>
+          <span class="card-title">Office Exterior</span>
+        </div>
+        <p>The 659 C Street SE building — capture it from the sidewalk with visible street signage. This is your GBP "cover photo" and helps Google verify location.</p>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon" style="background:rgba(34,197,94,0.15); color:var(--green);">&#128247;</div>
+          <span class="card-title">Closing Room</span>
+        </div>
+        <p>The conference/closing room staged with documents, pens, and the warm atmosphere clients experience. This demystifies the closing process for first-time buyers.</p>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon" style="background:rgba(34,197,94,0.15); color:var(--green);">&#128247;</div>
+          <span class="card-title">Team Headshots</span>
+        </div>
+        <p>Professional portraits of each team member — warm, approachable, on-brand. Include name and role in the GBP image caption. Critical for "attorney-led" positioning.</p>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon" style="background:rgba(34,197,94,0.15); color:var(--green);">&#128247;</div>
+          <span class="card-title">Neighborhood Context</span>
+        </div>
+        <p>A few shots that say "we're on the Hill" — Eastern Market, Barracks Row signage, the Capitol dome from C Street. Embed GPS data in image EXIF to boost local relevance.</p>
+      </div>
+    </div>
+
+    <h3>GBP Posts — Weekly Cadence</h3>
+    <p>Profiles posting 2-3x per week see <strong>34% higher engagement</strong>. Here's a sustainable rotation for a title company:</p>
+
+    <div class="checklist">
+      <div class="checklist-title">&#128197; Weekly Post Rotation</div>
+      <div class="check-item">
+        <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+        <div class="check-label"><strong>Monday — Market Insight:</strong> Quick DC real estate stat or trend (e.g., "Capitol Hill median home price hit $X in Q1 2026"). Positions Woodland as locally informed.</div>
+      </div>
+      <div class="check-item">
+        <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+        <div class="check-label"><strong>Wednesday — Buyer Education:</strong> Tips like "3 things to check on your title commitment" or "What happens at a DC settlement." Answers real questions clients Google.</div>
+      </div>
+      <div class="check-item">
+        <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+        <div class="check-label"><strong>Friday — Social Proof:</strong> Highlight a recent 5-star review (with permission) or a "just closed" celebration. Humanizes the brand and signals active business.</div>
+      </div>
+    </div>
+
+    <h3>Q&A Section — Seed It</h3>
+    <p>Google's Q&A is more prominent in 2026 and often shows up in AI Overviews. Seed these questions (have someone on the team post them, then answer officially):</p>
+    <div class="card-grid">
+      <div class="card">
+        <p><strong>Q:</strong> Do you offer remote closings / RON?</p>
+        <p><strong>A:</strong> Yes — Woodland Estate & Title offers remote online notarization (RON) for clients in DC, VA, and MD...</p>
+      </div>
+      <div class="card">
+        <p><strong>Q:</strong> Is an attorney present at every closing?</p>
+        <p><strong>A:</strong> Yes. Every Woodland settlement is attorney-led, which is our key differentiator...</p>
+      </div>
+      <div class="card">
+        <p><strong>Q:</strong> What title insurance companies do you underwrite for?</p>
+        <p><strong>A:</strong> We underwrite for Fidelity National Title Insurance Company and Stewart Title Guaranty Company...</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab: Reviews -->
+  <div class="tab-content" id="g-reviews">
+    <h3>Review Velocity Strategy</h3>
+    <p>261 reviews is strong, but momentum matters. Google rewards <em>recency</em> — a burst of old reviews matters less than a steady stream of fresh ones. Here's how to systematize it:</p>
+
+    <div class="checklist">
+      <div class="checklist-title">&#11088; Review Collection System</div>
+      <div class="check-item">
+        <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+        <div class="check-label"><strong>Create a short review link.</strong> Generate the direct Google review URL and shorten it (e.g., g.page/woodlandtitledc/review). Print it on closing folders, email signatures, and follow-up emails.</div>
+        <span class="check-priority p-high">HIGH</span>
+      </div>
+      <div class="check-item">
+        <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+        <div class="check-label"><strong>Post-closing email sequence.</strong> Send a personalized "thank you" email 24-48 hours after closing with a direct link. Mention the specific property or transaction to jog memory. Use Paymints or a CRM for automation.</div>
+        <span class="check-priority p-high">HIGH</span>
+      </div>
+      <div class="check-item">
+        <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+        <div class="check-label"><strong>QR code in closing packets.</strong> A small branded card in the closing folder: "How did we do? Scan to leave a review." Physical touchpoint right at the moment of satisfaction.</div>
+        <span class="check-priority p-med">MED</span>
+      </div>
+      <div class="check-item">
+        <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+        <div class="check-label"><strong>Respond to every review.</strong> Reply within 24 hours — thank positive reviewers by name, address any concerns constructively. Google monitors response rate and time.</div>
+        <span class="check-priority p-high">HIGH</span>
+      </div>
+      <div class="check-item">
+        <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+        <div class="check-label"><strong>Agent referral program.</strong> Real estate agents are repeat customers — make it easy for them to refer clients and remind them to review. A simple "we'd love your feedback" note after every closing.</div>
+        <span class="check-priority p-med">MED</span>
+      </div>
+    </div>
+
+    <div class="callout callout-warn">
+      <strong>Never incentivize reviews.</strong> Google's terms prohibit offering discounts, gifts, or payment for reviews. The ask should always be optional and genuine. Focus on making the review process easy, not rewarded.
+    </div>
+  </div>
+
+  <!-- Tab: Advanced -->
+  <div class="tab-content" id="g-advanced">
+    <h3>Advanced GBP Tactics for 2026</h3>
+
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon" style="background:rgba(99,102,241,0.15); color:var(--accent-light);">&#129302;</div>
+          <span class="card-title">AI Overview Optimization</span>
+        </div>
+        <p>Google's AI Overviews now pull from GBP Q&A and posts. Well-structured Q&A with natural language answers has the best chance of being surfaced. Write answers as if you're explaining to a first-time buyer.</p>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon" style="background:rgba(99,102,241,0.15); color:var(--accent-light);">&#128279;</div>
+          <span class="card-title">Website ↔ GBP Alignment</span>
+        </div>
+        <p>Google cross-references your website's service descriptions with your GBP services tab. Make sure the language matches — if your site says "residential settlements" but GBP says "home closings," align them. <a href="https://www.localmighty.com/blog/google-business-profile-optimization-best-practices/" target="_blank">Source</a></p>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon" style="background:rgba(99,102,241,0.15); color:var(--accent-light);">&#128200;</div>
+          <span class="card-title">GBP Analytics Review</span>
+        </div>
+        <p>Set a monthly calendar reminder to review GBP Insights: which search queries drive views, how many direction/call requests, and photo engagement. Double down on service terms that bring traffic.</p>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon" style="background:rgba(99,102,241,0.15); color:var(--accent-light);">&#128205;</div>
+          <span class="card-title">Local Citation Audit</span>
+        </div>
+        <p>Google checks NAP consistency across 50+ directories. Run a free citation scan via <a href="https://www.brightlocal.com/local-search-results-checker/" target="_blank">BrightLocal</a> or <a href="https://moz.com/local" target="_blank">Moz Local</a> and fix any mismatches (old phone numbers, wrong suite numbers, "LLC" vs no "LLC").</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SECTION 4: YELP -->
+<!-- ============================================================ -->
+<section id="yelp">
+  <span class="section-label">Section 04</span>
+  <h2>Yelp Optimization</h2>
+  <p class="section-desc">Yelp pages rank #1 for many DC service queries. A one-star increase = 5-9% revenue boost. Even though Google gets more volume, Yelp carries disproportionate trust weight.</p>
+
+  <div class="stat-row">
+    <div class="stat">
+      <div class="stat-value">5-10%</div>
+      <div class="stat-label">Revenue boost from claiming Yelp</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">5-9%</div>
+      <div class="stat-label">Revenue per additional star</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">#1</div>
+      <div class="stat-label">Yelp rank for "title company DC"</div>
+    </div>
+  </div>
+
+  <div class="checklist">
+    <div class="checklist-title">&#9745; Yelp Profile Optimization</div>
+    <div class="check-item">
+      <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+      <div class="check-label"><strong>Claim & verify the listing</strong> at <a href="https://www.yelp.com/biz/woodland-estate-and-title-washington" target="_blank">yelp.com/biz/woodland-estate-and-title-washington</a> if not already claimed</div>
+      <span class="check-priority p-high">HIGH</span>
+    </div>
+    <div class="check-item">
+      <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+      <div class="check-label"><strong>Primary category:</strong> "Title Companies" — Yelp uses its own taxonomy, make sure the most specific category is selected</div>
+      <span class="check-priority p-high">HIGH</span>
+    </div>
+    <div class="check-item">
+      <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+      <div class="check-label"><strong>Complete "About the Business"</strong> with a specialties section. Mention: attorney-led, Capitol Hill, DC/VA/MD, Fidelity/Stewart underwriting, first-time buyers, refinances</div>
+      <span class="check-priority p-high">HIGH</span>
+    </div>
+    <div class="check-item">
+      <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+      <div class="check-label"><strong>Upload 15-20 photos</strong> — same shoot as GBP. Include office exterior, closing room, team headshots, and neighborhood shots. Yelp users browse photos heavily.</div>
+      <span class="check-priority p-high">HIGH</span>
+    </div>
+    <div class="check-item">
+      <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+      <div class="check-label"><strong>Business highlights:</strong> Enable "Family-owned & operated," "Established in [year]," "Free estimates," and any other applicable badges</div>
+      <span class="check-priority p-med">MED</span>
+    </div>
+    <div class="check-item">
+      <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+      <div class="check-label"><strong>Add a Yelp CTA button</strong> — "Request a Quote" or "Request a Consultation" tied to your scheduling link</div>
+      <span class="check-priority p-med">MED</span>
+    </div>
+    <div class="check-item">
+      <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+      <div class="check-label"><strong>NAP match:</strong> Ensure the name, address, and phone number match Google and the website <em>exactly</em> — even formatting (e.g., "St" vs "Street")</div>
+      <span class="check-priority p-high">HIGH</span>
+    </div>
+    <div class="check-item">
+      <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+      <div class="check-label"><strong>Respond to all reviews</strong> within 24 hours. Yelp users expect business owner replies. Thank reviewers and personalize each response.</div>
+      <span class="check-priority p-med">MED</span>
+    </div>
+  </div>
+
+  <div class="callout callout-warn">
+    <strong>Yelp's review filter is aggressive.</strong> Unlike Google, you can't directly ask clients to review on Yelp — their algorithm filters reviews from users who aren't active on the platform. Instead: add a Yelp badge or "Find us on Yelp" link to your website footer and email signatures. This nudges Yelp-active users to find you organically, which results in reviews that stick. <a href="https://www.brightlocal.com/learn/optimizing-yelp-listing/" target="_blank">More on Yelp's filter</a>.
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SECTION 5: BONUS DIRECTORIES -->
+<!-- ============================================================ -->
+<section id="directories">
+  <span class="section-label">Section 05</span>
+  <h2>Bonus Directory Listings</h2>
+  <p class="section-desc">Beyond Google and Yelp, these directories either rank well for DC title searches or serve as citation sources that boost your Google ranking.</p>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon" style="background:rgba(34,197,94,0.15); color:var(--green);">&#9733;</div>
+        <span class="card-title">BBB (Better Business Bureau)</span>
+      </div>
+      <p><strong>Why:</strong> Accreditation adds a verified trust badge. BBB pages rank on page 1 for "[company] reviews" queries. <br><strong>Action:</strong> Apply for accreditation + claim profile at <a href="https://www.bbb.org/" target="_blank">bbb.org</a>. Cost is ~$400-500/yr for a small business in DC.</p>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon" style="background:rgba(34,197,94,0.15); color:var(--green);">&#127968;</div>
+        <span class="card-title">Zillow / Redfin</span>
+      </div>
+      <p><strong>Why:</strong> Woodland already has a <a href="https://www.redfin.com/openbook/title-company/washington-dc-woodland-title-sp2422846" target="_blank">Redfin page</a>. Real estate buyers start on these platforms. <br><strong>Action:</strong> Claim the Redfin profile, ensure Zillow listing exists, and link back to the website.</p>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon" style="background:rgba(34,197,94,0.15); color:var(--green);">&#128187;</div>
+        <span class="card-title">Bing Places & Apple Maps</span>
+      </div>
+      <p><strong>Why:</strong> ~15% of searches happen on Bing (especially older demographics), and Apple Maps is default for iPhone users getting directions to the office. <br><strong>Action:</strong> Claim at <a href="https://www.bingplaces.com/" target="_blank">bingplaces.com</a> and <a href="https://mapsconnect.apple.com/" target="_blank">Apple Maps Connect</a>.</p>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon" style="background:rgba(34,197,94,0.15); color:var(--green);">&#128188;</div>
+        <span class="card-title">Chamber of Commerce</span>
+      </div>
+      <p><strong>Why:</strong> Woodland already has a <a href="https://www.chamberofcommerce.com/united-states/district-of-columbia/washington/title-company/2013745685-woodland-estate-title-llc" target="_blank">Chamber listing</a>. It's a high-authority citation source. <br><strong>Action:</strong> Verify info is current. Consider joining the <a href="https://capitolhillbid.org/" target="_blank">Capitol Hill BID</a> for neighborhood credibility.</p>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon" style="background:rgba(34,197,94,0.15); color:var(--green);">&#128101;</div>
+        <span class="card-title">LinkedIn Company Page</span>
+      </div>
+      <p><strong>Why:</strong> B2B credibility for agent referral partners. LinkedIn pages rank well and convey institutional permanence. <br><strong>Action:</strong> Create or update the company page with the same photo set, service descriptions, and a company overview that emphasizes the attorney-led model.</p>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon" style="background:rgba(34,197,94,0.15); color:var(--green);">&#128214;</div>
+        <span class="card-title">Manta / D&B / Yellow Pages</span>
+      </div>
+      <p><strong>Why:</strong> Woodland already has listings on <a href="https://www.manta.com/c/mkb7tbc/woodland-estate-title-llc" target="_blank">Manta</a> and <a href="https://www.dnb.com/business-directory/company-profiles.woodland_estate__title_llc.a0ee7e541c7631681c4beaba192e96a7.html" target="_blank">D&B</a>. These are citation sources. <br><strong>Action:</strong> Verify NAP accuracy on each — mismatches here can quietly drag down Google rankings.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SECTION 6: DESIGN QUICK WINS -->
+<!-- ============================================================ -->
+<section id="design">
+  <span class="section-label">Section 06</span>
+  <h2>Design Quick Wins</h2>
+  <p class="section-desc">High-impact brand and design improvements that make Woodland look like the most established, trustworthy title company on the Hill — recommended as add-on services from your agency.</p>
+
+  <div class="card-grid">
+    <div class="card" style="border-left: 3px solid var(--green);">
+      <div class="card-header">
+        <span class="card-title">1. Add a "Meet Our Team" Section</span>
+        <span class="badge badge-green">Quick Win</span>
+      </div>
+      <p>The website currently has zero team bios. For an attorney-led firm, this is the biggest credibility gap. Add professional headshots, names, titles, bar admissions, and a 2-sentence bio. This content also feeds Google's E-E-A-T (Experience, Expertise, Authoritativeness, Trust) signals, which is increasingly important for financial services.</p>
+    </div>
+    <div class="card" style="border-left: 3px solid var(--green);">
+      <div class="card-header">
+        <span class="card-title">2. Homepage Testimonial Carousel</span>
+        <span class="badge badge-green">Quick Win</span>
+      </div>
+      <p>Pull the best 5-star quotes from Google reviews and display them on the homepage. 261 reviews and none are visible on the site — this is leaving trust on the table. Squarespace supports testimonial blocks natively. Pair each quote with a first name and neighborhood (e.g., "— Sarah, Capitol Hill").</p>
+    </div>
+    <div class="card" style="border-left: 3px solid var(--yellow);">
+      <div class="card-header">
+        <span class="card-title">3. Write a Real Meta Description</span>
+        <span class="badge badge-yellow">SEO</span>
+      </div>
+      <p>The current meta description is empty. Proposed: <em>"Woodland Estate & Title provides attorney-led property settlements in Washington DC, Virginia & Maryland. Personable, transparent closings for purchases, refinances & more. 659 C St SE, Capitol Hill."</em> — this hits keywords, geography, and the attorney differentiator in under 160 characters.</p>
+    </div>
+    <div class="card" style="border-left: 3px solid var(--yellow);">
+      <div class="card-header">
+        <span class="card-title">4. Neighborhood Landing Pages</span>
+        <span class="badge badge-yellow">SEO</span>
+      </div>
+      <p>Create lightweight pages like /capitol-hill, /navy-yard, /h-street-corridor. Each page has a paragraph about serving that neighborhood, local real estate context, and the same CTAs. Eastern Title does this well — <a href="https://easterntitle.com/washington-dc/capitol-hill/title-company" target="_blank">see their Capitol Hill page</a>. These pages rank individually in local search.</p>
+    </div>
+    <div class="card" style="border-left: 3px solid var(--accent);">
+      <div class="card-header">
+        <span class="card-title">5. Trust Badge Bar</span>
+        <span class="badge badge-orange">Credibility</span>
+      </div>
+      <p>Add a horizontal strip below the hero with logos: Fidelity National Title, Stewart Title, "261+ Five-Star Reviews," BBB accredited (after applying), and DC Bar Association. This is standard for title companies and immediately signals institutional legitimacy. Federal Title does this with their own underwriter/partner logos.</p>
+    </div>
+    <div class="card" style="border-left: 3px solid var(--accent);">
+      <div class="card-header">
+        <span class="card-title">6. Professional Photo Shoot</span>
+        <span class="badge badge-orange">Credibility</span>
+      </div>
+      <p>One 2-3 hour photo session at the C Street office produces all the assets needed: GBP photos, Yelp photos, team headshots, homepage imagery, and social media content. Budget: $800-1,500 for a DC-area commercial photographer. This single investment feeds every other recommendation in this guide.</p>
+    </div>
+    <div class="card" style="border-left: 3px solid var(--accent);">
+      <div class="card-header">
+        <span class="card-title">7. Review Aggregation Widget</span>
+        <span class="badge badge-orange">Credibility</span>
+      </div>
+      <p>Embed a live review feed on the website using a tool like <a href="https://reviews.birdeye.com/woodland-estate-title-llc-169739315491476" target="_blank">Birdeye</a> (which already aggregates Woodland's reviews), <a href="https://elfsight.com/google-reviews-widget/" target="_blank">Elfsight</a>, or Squarespace's built-in review integration. This keeps the site fresh without manual updates and shows Google that the site is dynamically linked to review platforms.</p>
+    </div>
+    <div class="card" style="border-left: 3px solid var(--accent);">
+      <div class="card-header">
+        <span class="card-title">8. Branded Closing Experience</span>
+        <span class="badge badge-orange">Credibility</span>
+      </div>
+      <p>Small touches that signal quality: branded closing folders, a "Welcome to Your Closing" card, a QR code review card, and a small congratulatory item (branded pen, keychain). These details drive word-of-mouth, photo-worthy moments (clients post closing selfies), and natural review prompts. Budget: $5-8 per closing.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SECTION 7: TIMELINE -->
+<!-- ============================================================ -->
+<section id="timeline">
+  <span class="section-label">Section 07</span>
+  <h2>Recommended Rollout Timeline</h2>
+  <p class="section-desc">Phased approach so nothing gets overwhelming. Start with the highest-impact, lowest-effort items.</p>
+
+  <div class="checklist">
+    <div class="checklist-title">&#128640; Week 1-2: Foundation</div>
+    <div class="check-item">
+      <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+      <div class="check-label">Write and publish the meta description</div>
+      <span class="check-priority p-high">HIGH</span>
+    </div>
+    <div class="check-item">
+      <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+      <div class="check-label">Complete GBP profile (description, services, categories, attributes, booking link)</div>
+      <span class="check-priority p-high">HIGH</span>
+    </div>
+    <div class="check-item">
+      <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+      <div class="check-label">Claim & optimize Yelp listing (categories, description, hours)</div>
+      <span class="check-priority p-high">HIGH</span>
+    </div>
+    <div class="check-item">
+      <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+      <div class="check-label">Run NAP consistency audit across all existing listings</div>
+      <span class="check-priority p-high">HIGH</span>
+    </div>
+  </div>
+
+  <div class="checklist">
+    <div class="checklist-title">&#128247; Week 3-4: Visual Assets</div>
+    <div class="check-item">
+      <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+      <div class="check-label">Schedule and execute professional photo shoot at 659 C Street SE</div>
+      <span class="check-priority p-high">HIGH</span>
+    </div>
+    <div class="check-item">
+      <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+      <div class="check-label">Upload photos to GBP (10-15 images with keyword-rich captions)</div>
+      <span class="check-priority p-high">HIGH</span>
+    </div>
+    <div class="check-item">
+      <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+      <div class="check-label">Upload photos to Yelp (15-20 images)</div>
+      <span class="check-priority p-med">MED</span>
+    </div>
+    <div class="check-item">
+      <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+      <div class="check-label">Build "Meet Our Team" section on website</div>
+      <span class="check-priority p-high">HIGH</span>
+    </div>
+  </div>
+
+  <div class="checklist">
+    <div class="checklist-title">&#128736; Week 5-6: Content & Trust</div>
+    <div class="check-item">
+      <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+      <div class="check-label">Add homepage testimonial carousel</div>
+      <span class="check-priority p-med">MED</span>
+    </div>
+    <div class="check-item">
+      <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+      <div class="check-label">Add trust badge bar (Fidelity, Stewart, review count, BBB)</div>
+      <span class="check-priority p-med">MED</span>
+    </div>
+    <div class="check-item">
+      <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+      <div class="check-label">Seed GBP Q&A with 5-8 common questions and detailed answers</div>
+      <span class="check-priority p-med">MED</span>
+    </div>
+    <div class="check-item">
+      <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+      <div class="check-label">Start GBP posting cadence (3x/week)</div>
+      <span class="check-priority p-med">MED</span>
+    </div>
+    <div class="check-item">
+      <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+      <div class="check-label">Set up post-closing review request email sequence</div>
+      <span class="check-priority p-med">MED</span>
+    </div>
+  </div>
+
+  <div class="checklist">
+    <div class="checklist-title">&#127919; Week 7-8: Expansion</div>
+    <div class="check-item">
+      <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+      <div class="check-label">Claim Bing Places and Apple Maps listings</div>
+      <span class="check-priority p-low">LOW</span>
+    </div>
+    <div class="check-item">
+      <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+      <div class="check-label">Apply for BBB accreditation</div>
+      <span class="check-priority p-low">LOW</span>
+    </div>
+    <div class="check-item">
+      <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+      <div class="check-label">Create 2-3 neighborhood landing pages</div>
+      <span class="check-priority p-med">MED</span>
+    </div>
+    <div class="check-item">
+      <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+      <div class="check-label">Update LinkedIn company page</div>
+      <span class="check-priority p-low">LOW</span>
+    </div>
+    <div class="check-item">
+      <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+      <div class="check-label">Design branded closing folder + review QR card</div>
+      <span class="check-priority p-low">LOW</span>
+    </div>
+  </div>
+
+  <div class="callout callout-success" style="margin-top: 32px;">
+    <strong>Ongoing (monthly):</strong> Review GBP analytics, respond to all new reviews within 24 hours, post 2-3x/week on GBP, upload 2-4 new photos per month, and re-run a citation consistency check quarterly.
+  </div>
+</section>
+
+</div>
+
+<footer>
+  <p>Prepared by <a href="https://wrkhrs.co" target="_blank">WRKHRS</a> for Woodland Estate & Title &mdash; April 2026</p>
+  <p style="margin-top: 8px;">Sources linked throughout. All competitor data from public listings and reviews.</p>
+</footer>
+
+<script>
+  // Tab switching
+  document.querySelectorAll('.tabs').forEach(tabGroup => {
+    tabGroup.querySelectorAll('.tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        const target = tab.dataset.tab;
+        const section = tab.closest('section');
+        section.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        section.querySelectorAll('.tab-content').forEach(tc => tc.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById(target).classList.add('active');
+      });
+    });
+  });
+
+  // Smooth scroll for TOC links
+  document.querySelectorAll('.toc a').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = document.querySelector(link.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+</script>
+
+</body>
+</html>

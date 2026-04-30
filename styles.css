@@ -1397,6 +1397,53 @@ a.work-card:hover {
   grid-column: span 2;
 }
 
+/* Pair grid — two equal-weight feature cards side by side */
+.work-grid-pair {
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 56px;
+}
+.work-card-large {
+  padding: 36px 34px 38px;
+  gap: 14px;
+}
+.report-page .section .work-card-large h3 {
+  font-size: clamp(28px, 2.4vw, 34px);
+  letter-spacing: -0.6px;
+}
+.report-page .work-card-large p { font-size: 18px; line-height: 1.55; }
+
+/* Subsection inside a phase */
+.work-subsection {
+  margin-top: 16px;
+  padding-top: 56px;
+  border-top: 1px solid var(--border);
+}
+.work-subsection-head {
+  margin: 0 0 32px;
+  max-width: var(--content-narrow);
+}
+.work-subsection-title {
+  font-family: var(--sans);
+  font-style: normal;
+  font-weight: 600;
+  font-size: clamp(26px, 2.6vw, 38px);
+  line-height: 1.15;
+  letter-spacing: -0.7px;
+  color: var(--text-dark);
+  margin: 12px 0 10px;
+}
+.report-page .work-subsection-title {
+  font-weight: 600;
+  letter-spacing: -1px;
+}
+.work-subsection-sub {
+  font-family: var(--sans);
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--text-soft);
+  margin: 0;
+}
+
 /* Included-items list inside a feature card */
 .work-card-included {
   list-style: none;
@@ -1739,6 +1786,7 @@ a.work-card:hover {
 
 @media (max-width: 960px) {
   .work-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .work-grid-pair { grid-template-columns: 1fr; }
   .install-row { grid-template-columns: 1fr; gap: 20px; }
   .install-row-media { min-height: 220px; }
   .install-tools { grid-template-columns: 1fr; gap: 24px; }
