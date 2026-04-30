@@ -1490,7 +1490,18 @@ a.work-card:hover {
   grid-template-columns: 1.05fr 0.95fr;
   gap: 32px;
   margin-top: 56px;
-  align-items: start;
+  align-items: stretch;
+}
+.install-tools > .calc-card,
+.install-tools > .install-diagram {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.install-tools > .install-diagram svg {
+  flex: 1;
+  height: auto;
+  min-height: 0;
 }
 
 /* Calculator card */
