@@ -455,6 +455,107 @@ img { display: block; max-width: 100%; height: auto; }
 }
 .btn.btn-rounded { border-radius: 16px; }
 
+/* ───────────────────────────────────────────────
+   COMMS-PLAN FEATURE CARD (full-width with mini calendars)
+   ─────────────────────────────────────────────── */
+.work-grid > .comms-feature {
+  grid-column: 1 / -1;
+  padding: 36px 40px 40px;
+}
+.comms-feature-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 32px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+.comms-feature-cta { margin: 0; flex: 0 0 auto; padding-top: 8px; }
+.report-page .comms-feature-head > div:first-child {
+  flex: 1 1 480px;
+  max-width: 720px;
+}
+.report-page .comms-feature h3 { font-size: 28px; letter-spacing: -0.5px; }
+
+.comms-preview {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+.comms-month {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.comms-num {
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1;
+  letter-spacing: -0.8px;
+  color: var(--gold);
+}
+
+/* Mini calendar */
+.comms-mini-cal {
+  background: var(--bg-cream, #FCF8EF);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 16px 16px;
+}
+.comms-mini-cal-head {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  margin-bottom: 12px;
+}
+.comms-mini-cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+}
+.comms-mini-cal-grid > span {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--border);
+}
+/* Highlight the active week per month (1-indexed: 1..5 = rows 1..5).
+   With 7 cols × 5 rows, the seven cells per row are children N*7+1 .. N*7+7. */
+.comms-mini-cal-grid[data-active="1"] > span:nth-child(-n+7),
+.comms-mini-cal-grid[data-active="2"] > span:nth-child(n+8):nth-child(-n+14),
+.comms-mini-cal-grid[data-active="3"] > span:nth-child(n+15):nth-child(-n+21),
+.comms-mini-cal-grid[data-active="4"] > span:nth-child(n+22):nth-child(-n+28),
+.comms-mini-cal-grid[data-active="5"] > span:nth-child(n+29):nth-child(-n+35) {
+  background: var(--gold);
+}
+
+.comms-month-beat {
+  font-family: var(--sans);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-soft);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.comms-month-beat strong {
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--text-dark);
+  letter-spacing: -0.2px;
+}
+
+@media (max-width: 820px) {
+  .comms-preview { grid-template-columns: 1fr; gap: 24px; }
+  .comms-feature-head { flex-direction: column; }
+}
+
 /* Pending / not-yet-linked button — used while the underlying file is queued */
 .btn.btn-disabled {
   color: var(--text-light);
