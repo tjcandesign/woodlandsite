@@ -2012,11 +2012,20 @@ h2.work-subsection-title {
   display: flex;
   flex-direction: column;
   height: 100%;
+  padding: 32px 32px 28px;
+}
+.install-tools > .install-diagram {
+  justify-content: center;
+}
+.install-tools > .install-diagram .install-diagram-cap {
+  margin-bottom: 18px;
 }
 .install-tools > .install-diagram svg {
-  flex: 1;
+  width: 100%;
   height: auto;
-  min-height: 0;
+  max-height: 100%;
+  display: block;
+  margin: 0 auto;
 }
 
 /* Calculator card */
