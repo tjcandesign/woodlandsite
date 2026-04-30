@@ -1445,18 +1445,15 @@ img { display: block; max-width: 100%; height: auto; }
   .comms-year th, .comms-year td { padding: 10px 8px; }
 }
 
-/* Inline sidebar note — concept callouts that aren't deliverables */
+/* Inline note — sits in the section flow, no decorative chrome */
 .sidebar-note {
-  margin: 28px 0 0;
-  padding: 24px 28px;
-  background: var(--bg-cream, #FCF8EF);
-  border-left: 3px solid var(--gold);
-  border-radius: 8px;
+  margin: 56px 0 0;
+  padding: 40px 0 0;
+  border-top: 1px solid var(--border);
   max-width: 820px;
 }
 .sidebar-note-wide {
   max-width: none;
-  padding: 36px 40px;
 }
 .sidebar-note-grid {
   display: grid;
