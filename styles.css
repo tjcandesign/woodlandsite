@@ -449,9 +449,9 @@ img { display: block; max-width: 100%; height: auto; }
   border-color: rgba(15, 34, 64, 0.3);
 }
 .btn-outline.btn-dark:hover {
-  background: var(--sage-dark);
+  background: var(--navy-dark);
   color: #FFFFFF;
-  border-color: var(--sage-dark);
+  border-color: var(--navy-dark);
 }
 .btn.btn-rounded { border-radius: 16px; }
 
