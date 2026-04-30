@@ -1311,10 +1311,56 @@ a.work-card:hover {
   font-family: var(--sans);
   font-size: 11px;
   font-weight: 600;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
   color: var(--gold);
-  margin-bottom: 6px;
+  margin-bottom: 10px;
+}
+/* Format pills — make it instantly clear what each card opens to */
+.work-card-eyebrow.kind-website,
+.work-card-eyebrow.kind-pdf,
+.work-card-eyebrow.kind-docx,
+.work-card-eyebrow.kind-print,
+.work-card-eyebrow.kind-install,
+.work-card-eyebrow.kind-internal,
+.work-card-eyebrow.kind-pending {
+  display: inline-block;
+  padding: 5px 10px 4px;
+  border-radius: 999px;
+  letter-spacing: 1.4px;
+  font-size: 10.5px;
+}
+.work-card-eyebrow.kind-website {
+  background: rgba(95, 108, 78, 0.12);
+  color: var(--sage-dark);
+}
+.work-card-eyebrow.kind-pdf {
+  background: rgba(155, 35, 35, 0.10);
+  color: #9B2323;
+}
+.work-card-eyebrow.kind-docx {
+  background: rgba(45, 70, 110, 0.10);
+  color: #2D466E;
+}
+.work-card-eyebrow.kind-install {
+  background: rgba(184, 134, 11, 0.14);
+  color: var(--gold-dark);
+}
+.work-card-eyebrow.kind-print {
+  background: rgba(126, 96, 60, 0.12);
+  color: #7E603C;
+}
+.work-card-eyebrow.kind-internal {
+  background: transparent;
+  color: var(--text-soft);
+  border: 1px solid var(--border-strong);
+  padding: 4px 9px 3px;
+}
+.work-card-eyebrow.kind-pending {
+  background: transparent;
+  color: var(--text-soft);
+  border: 1px dashed var(--border-strong);
+  padding: 4px 9px 3px;
 }
 .section .work-card h3 {
   font-family: var(--serif);
