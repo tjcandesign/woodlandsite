@@ -1784,6 +1784,23 @@ a.work-card:hover {
 .work-card-feature.work-card-with-preview {
   padding: 28px;
 }
+/* Brand card variant — top-align the preview so the body sits flush at top */
+.work-card-feature.work-card-with-preview {
+  align-items: start;
+}
+.work-card-feature.work-card-with-preview .site-preview {
+  align-self: flex-start;
+}
+/* Brand card is presentational — keep it white-card-styled even though it's
+   marked .work-card-static (which normally strips bg/shadow). Override. */
+.work-card-feature.work-card-static {
+  background: #FFFFFF;
+  border: 1px solid var(--border);
+  box-shadow: 0 1px 2px rgba(15, 34, 64, 0.04), 0 18px 36px rgba(15, 34, 64, 0.05);
+}
+.work-card-cta {
+  margin-top: 18px;
+}
 .report-page .section .work-card-large h3 {
   font-size: clamp(28px, 2.4vw, 34px);
   letter-spacing: -0.6px;

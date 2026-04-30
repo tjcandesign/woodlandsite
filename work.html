@@ -54,7 +54,7 @@
         </div>
 
         <div class="work-grid work-grid-feature">
-          <a class="work-card work-card-feature work-card-with-preview" href="brand.html">
+          <article class="work-card work-card-feature work-card-with-preview work-card-static">
             <div class="site-preview" aria-hidden="true">
               <div class="site-preview-chrome">
                 <span class="site-preview-dot"></span>
@@ -69,7 +69,6 @@
             <div class="work-card-with-preview-body">
               <div class="work-card-eyebrow kind-website">Website page</div>
               <h3>Brand Language Document</h3>
-              <p>Voice, tone, and messaging on a single page — the source of truth for how the brand reads, speaks, and shows up. The type system, logo and mark library, and style guidance all live here.</p>
               <ul class="work-card-included" aria-label="What's included">
                 <li>
                   <span class="incl-tag">Type system</span>
@@ -84,9 +83,11 @@
                   <span class="incl-text">Color, type, mark usage, and tone — applied across the brand doc and the live site.</span>
                 </li>
               </ul>
-              <span class="work-card-link">Open page <span aria-hidden="true">&rarr;</span></span>
+              <div class="work-card-cta">
+                <a class="btn btn-outline btn-dark btn-rounded" href="brand.html">View page <span aria-hidden="true">&rarr;</span></a>
+              </div>
             </div>
-          </a>
+          </article>
           <a class="work-card" href="assets/deliverables/woodland-brand-language.pdf" target="_blank" rel="noopener">
             <div class="work-card-eyebrow kind-pdf">PDF · Origin doc</div>
             <h3>Original Strategy Draft</h3>
@@ -149,16 +150,15 @@
                 <circle class="venn-c" cx="170" cy="225" r="100"/>
                 <circle class="venn-c" cx="290" cy="225" r="100"/>
 
-                <!-- Labels inside each circle's unique zone -->
-                <text class="venn-label" x="230" y="68">Agents &amp; Brokers</text>
-                <text class="venn-label" x="98" y="288">Lenders</text>
-                <text class="venn-label" x="362" y="288">Past Clients</text>
+                <!-- Labels centered inside each circle's unique zone -->
+                <text class="venn-label" x="230" y="140">Agents &amp; Brokers</text>
+                <text class="venn-label" x="170" y="230">Lenders</text>
+                <text class="venn-label" x="290" y="230">Past Clients</text>
 
                 <!-- Center label — where all three meet -->
                 <text class="venn-center-sub" x="230" y="188">Third Thursday</text>
                 <text class="venn-center" x="230" y="208">The Woodland team</text>
               </svg>
-              <p class="connections-note">Three groups walk in independently. They leave knowing each other — and knowing the Woodland team brought them together. That's the entire deliverable.</p>
             </figure>
           </div>
         </aside>
