@@ -1269,6 +1269,72 @@ img { display: block; max-width: 100%; height: auto; }
 }
 .work-meta a:hover { border-bottom-color: var(--sage-dark); }
 
+/* Phase pill bar — quick-jump links from the intro */
+.phase-pillbar {
+  list-style: none;
+  margin: 28px 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.phase-pillbar a { text-decoration: none; }
+.phase-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 16px 8px 12px;
+  border-radius: 999px;
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  color: var(--text-dark);
+  background: #FFFFFF;
+  border: 1px solid var(--border);
+  transition: border-color 0.2s, transform 0.2s;
+}
+.phase-pill .status-dot {
+  flex: 0 0 12px;
+  width: 12px;
+  height: 12px;
+  margin: 0;
+}
+.phase-pill.is-done .status-dot {
+  background-size: 78%;
+}
+.phase-pillbar a:hover .phase-pill {
+  border-color: var(--sage-dark);
+  transform: translateY(-1px);
+}
+
+/* Invoicing note block at the bottom of the records section */
+.invoicing-note {
+  margin-top: 48px;
+  padding: 32px 36px;
+  background: #FFFFFF;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  max-width: 820px;
+}
+.invoicing-note h3 {
+  font-family: var(--sans);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  color: var(--text-dark);
+  margin: 0 0 12px;
+  letter-spacing: -0.4px;
+}
+.invoicing-note p {
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--text-soft);
+  margin: 0 0 12px;
+}
+.invoicing-note p:last-child { margin-bottom: 0; }
+
 .work-phase-head {
   max-width: var(--content-narrow);
   margin: 0 0 40px;
