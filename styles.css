@@ -1648,7 +1648,7 @@ a.work-card:hover {
   font-weight: 600;
   font-size: clamp(48px, 5.2vw, 78px);
   line-height: 1.05;
-  letter-spacing: -1.5px;
+  letter-spacing: -3px;
   color: var(--text-dark);
   margin: 18px 0 22px;
 }
@@ -1658,7 +1658,7 @@ a.work-card:hover {
   font-weight: 600;
   font-size: clamp(34px, 3.6vw, 52px);
   line-height: 1.12;
-  letter-spacing: -0.8px;
+  letter-spacing: -1.6px;
   color: var(--text-dark);
 }
 .report-page .section h3,
@@ -1670,11 +1670,9 @@ a.work-card:hover {
   font-weight: 600;
   font-size: 26px;
   line-height: 1.25;
-  letter-spacing: -0.3px;
+  letter-spacing: -0.7px;
   color: var(--text-dark);
 }
-.report-page .section h2,
-.report-page .section h3 { letter-spacing: -0.5px; }
 
 /* Body copy — bigger across the board */
 .report-page p,
