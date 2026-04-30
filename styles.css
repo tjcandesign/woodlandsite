@@ -1621,6 +1621,121 @@ a.work-card:hover {
   .calc-head { flex-direction: column; align-items: flex-start; }
 }
 
+/* Report pages (work + project-status) — Inter only, larger type */
+.report-page,
+.report-page h1,
+.report-page h2,
+.report-page h3,
+.report-page h4,
+.report-page h5,
+.report-page p,
+.report-page li,
+.report-page dt,
+.report-page dd,
+.report-page a,
+.report-page span,
+.report-page em,
+.report-page strong {
+  font-family: var(--sans);
+  font-style: normal;
+}
+.report-page em { font-weight: 500; color: var(--text-soft); }
+
+/* Headlines */
+.report-page .work-title {
+  font-family: var(--sans);
+  font-style: normal;
+  font-weight: 600;
+  font-size: clamp(48px, 5.2vw, 78px);
+  line-height: 1.05;
+  letter-spacing: -1.5px;
+  color: var(--text-dark);
+  margin: 18px 0 22px;
+}
+.report-page .section h2 {
+  font-family: var(--sans);
+  font-style: normal;
+  font-weight: 600;
+  font-size: clamp(34px, 3.6vw, 52px);
+  line-height: 1.12;
+  letter-spacing: -0.8px;
+  color: var(--text-dark);
+}
+.report-page .section h3,
+.report-page .section .install-item h3,
+.report-page .section .work-card h3,
+.report-page .calc-title {
+  font-family: var(--sans);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 1.25;
+  letter-spacing: -0.3px;
+  color: var(--text-dark);
+}
+.report-page .section h2,
+.report-page .section h3 { letter-spacing: -0.5px; }
+
+/* Body copy — bigger across the board */
+.report-page p,
+.report-page .work-card p,
+.report-page .install-item p {
+  font-size: 19px;
+  line-height: 1.6;
+  color: var(--text-dark);
+}
+.report-page .lede {
+  font-size: clamp(22px, 2vw, 28px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.45;
+  color: var(--text-medium);
+}
+.report-page .work-phase-sub {
+  font-size: 19px;
+  color: var(--text-soft);
+}
+.report-page .section-tag {
+  font-size: 12px;
+  letter-spacing: 2.4px;
+}
+
+/* Status checklist */
+.report-page .status-list { gap: 18px; }
+.report-page .status-item { font-size: 19px; line-height: 1.55; }
+.report-page .status-item em { font-size: 17px; }
+
+/* Cards */
+.report-page .work-card { padding: 32px 30px 34px; }
+.report-page .work-card p { font-size: 17px; line-height: 1.55; }
+.report-page .work-card-eyebrow,
+.report-page .install-eyebrow,
+.report-page .calc-eyebrow,
+.report-page .calc-summary-title,
+.report-page .install-diagram-cap {
+  font-size: 12px;
+  letter-spacing: 2.4px;
+}
+.report-page .work-card-link { font-size: 13px; letter-spacing: 1.8px; }
+
+/* Install meta + calculator */
+.report-page .install-meta { font-size: 17px; }
+.report-page .install-meta li { padding: 6px 0; }
+.report-page .calc-out-row { font-size: 17px; }
+.report-page .calc-out-row dd { font-size: 22px; }
+.report-page .calc-out-total dd { font-size: 30px; }
+.report-page .calc-summary .calc-out-row { font-size: 16px; }
+.report-page .calc-summary .calc-out-row dd { font-size: 18px; }
+.report-page .calc-summary .calc-out-total dd { font-size: 26px; }
+.report-page .calc-input-wrap input {
+  font-family: var(--sans);
+  font-size: 22px;
+  font-weight: 500;
+}
+.report-page .calc-field { font-size: 12px; letter-spacing: 1.8px; }
+.report-page .calc-note { font-size: 14px; font-style: normal; }
+.report-page .install-sample figcaption { font-size: 16px; line-height: 1.6; }
+
 /* Print spec sheet — only show calc card + diagram + headings */
 @media print {
   body { background: #FFFFFF; }
