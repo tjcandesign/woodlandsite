@@ -2346,6 +2346,47 @@ h2.work-subsection-title {
 .report-page .calc-note { font-size: 14px; font-style: normal; }
 .report-page .install-sample figcaption { font-size: 16px; line-height: 1.6; }
 
+/* Footer on report pages — restore the homepage footer treatment that the
+   broad .report-page typography rules above accidentally overwrite. */
+.report-page .footer {
+  color: rgba(255,255,255,0.58);
+  font-size: 14px;
+}
+.report-page .footer p,
+.report-page .footer-col p {
+  font-size: 14px;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.62);
+}
+.report-page .footer-col h5 {
+  font-family: var(--sans);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: var(--gold-soft);
+}
+.report-page .footer-col a {
+  color: rgba(255,255,255,0.62);
+  font-size: 14px;
+}
+.report-page .footer-col a:hover { color: var(--text-white); }
+.report-page .footer-brand p {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 17px;
+  color: rgba(255,255,255,0.72);
+  line-height: 1.55;
+}
+.report-page .footer-bottom {
+  font-size: 12px;
+  letter-spacing: 0.3px;
+  color: rgba(255,255,255,0.4);
+}
+.report-page .footer-underwriters {
+  font-style: italic;
+}
+
 /* Print spec sheet — only show calc card + diagram + headings */
 @media print {
   body { background: #FFFFFF; }
