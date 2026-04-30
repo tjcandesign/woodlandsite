@@ -1308,6 +1308,143 @@ img { display: block; max-width: 100%; height: auto; }
   transform: translateY(-1px);
 }
 
+/* Quarterly comms plan — beats list + year table */
+.beats-list {
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.beat {
+  display: grid;
+  grid-template-columns: 88px 1fr;
+  gap: 28px;
+  padding: 28px 32px;
+  background: #FFFFFF;
+  border-radius: 16px;
+  box-shadow: 0 1px 2px rgba(15, 34, 64, 0.04), 0 18px 36px rgba(15, 34, 64, 0.05);
+}
+.beat-num {
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 44px;
+  line-height: 1;
+  letter-spacing: -1.5px;
+  color: var(--gold);
+}
+.beat-when {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  margin-bottom: 6px;
+}
+.report-page .beat-body h3 {
+  font-family: var(--sans);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 1.25;
+  letter-spacing: -0.5px;
+  color: var(--text-dark);
+  margin: 0 0 8px;
+}
+.report-page .beat-body p {
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--text-dark);
+  margin: 0 0 12px;
+}
+.beat-channels {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.beat-channels li {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--sage-tint, rgba(95, 108, 78, 0.10));
+  color: var(--sage-dark);
+}
+
+.comms-year {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 24px 0 14px;
+  font-family: var(--sans);
+  font-size: 15px;
+  background: #FFFFFF;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.comms-year th,
+.comms-year td {
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+.comms-year thead th {
+  background: var(--bg-cream, #FCF8EF);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--text-soft);
+}
+.comms-year tbody tr:last-child td { border-bottom: 0; }
+.comms-year td:first-child { color: var(--text-dark); }
+.comms-year strong { color: var(--gold); margin-right: 6px; font-weight: 700; }
+.comms-footnote {
+  font-family: var(--sans);
+  font-size: 14px;
+  font-style: italic;
+  color: var(--text-soft);
+}
+
+.operating-notes {
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.operating-notes li {
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--text-dark);
+  padding-left: 20px;
+  border-left: 2px solid var(--gold);
+}
+.operating-notes strong {
+  display: block;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+}
+
+@media (max-width: 640px) {
+  .beat { grid-template-columns: 1fr; gap: 8px; padding: 22px 22px; }
+  .beat-num { font-size: 32px; }
+  .comms-year { font-size: 13px; }
+  .comms-year th, .comms-year td { padding: 10px 8px; }
+}
+
 /* Inline sidebar note — concept callouts that aren't deliverables */
 .sidebar-note {
   margin: 28px 0 0;
