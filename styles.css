@@ -1998,6 +1998,14 @@ a.work-card:hover {
 .work-card-feature.work-card-with-preview .site-preview {
   align-self: flex-start;
 }
+/* Brand Language solo card — cap the preview width so it matches the
+   thumbnail size used on the Phase 3 website-refresh card */
+.brand-card-solo.work-card-with-preview {
+  grid-template-columns: minmax(260px, 420px) 1fr;
+}
+.brand-card-solo .site-preview {
+  align-self: flex-start;
+}
 /* Brand card is presentational — keep it white-card-styled even though it's
    marked .work-card-static (which normally strips bg/shadow). Override. */
 .work-card-feature.work-card-static {
